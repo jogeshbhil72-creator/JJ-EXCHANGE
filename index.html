@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d16">
+  <meta name="description" content="JJ EXCHANGE - Educational crypto and forex market dashboard.">
+  <title>JJ EXCHANGE | JINEX JACKKY</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <div class="brand">
+      <div class="brand-mark">JJ</div>
+      <div>
+        <b>JJ EXCHANGE</b>
+        <small>JINEX JACKKY</small>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <span class="demo-pill">DEMO MODE</span>
+    </div>
+  </header>
+
+  <div class="app-layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="side-label">MAIN MENU</div>
+
+      <a href="#dashboard" class="nav-link">▦ Dashboard</a>
+      <a href="#markets" class="nav-link">◈ Markets</a>
+      <a href="#analysis" class="nav-link">⌁ Market Analysis</a>
+      <a href="#portfolio" class="nav-link">▤ Demo Portfolio</a>
+
+      <div class="sidebar-note">
+        <b>JJ EXCHANGE</b>
+        <p>Learn. Understand. Practice.</p>
+        <span>Educational platform</span>
+      </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+
+      <section class="welcome-row">
+        <div>
+          <div class="eyebrow">JINEX JACKKY PRESENTS</div>
+          <h1>Market Dashboard</h1>
+          <p class="sub">Your educational crypto and forex workspace.</p>
+        </div>
+        <div class="market-status">
+          <span class="dot up"></span>
+          SIMULATED MARKET
+        </div>
+      </section>
+
+      <section class="stats-grid">
+
+        <article class="stat-card">
+          <div class="stat-label">Virtual Balance</div>
+          <h2>$<span id="walletBalance">10,000.00</span></h2>
+          <p>Practice balance only</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-label">Selected Asset</div>
+          <h2 id="currentPrice">--</h2>
+          <p id="chartCaption">BTC/USDT</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-label">Simulated Change</div>
+          <h2 id="marketChange">--</h2>
+          <p>Illustrative movement</p>
+        </article>
+
+      </section>
+
+      <section class="panel" id="markets">
+        <div class="panel-heading">
+          <div>
+            <h2>Market Watch</h2>
+            <p class="sub">Explore simulated asset prices.</p>
+          </div>
+          <span class="tag">DEMO DATA</span>
+        </div>
+
+        <div class="market-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Asset</th>
+                <th>Price</th>
+                <th>Change</th>
+              </tr>
+            </thead>
+            <tbody id="marketRows">
+              <tr>
+                <td colspan="3">Loading demo market...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading chart-heading">
+          <div>
+            <h2>Price Chart</h2>
+            <p class="sub" id="chartCaption">BTC/USDT | SIMULATED MARKET</p>
+          </div>
+
+          <div class="chart-controls">
+            <select id="assetSelect" aria-label="Select asset">
+              <option value="BTC">BTC/USDT</option>
+              <option value="ETH">ETH/USDT</option>
+              <option value="SOL">SOL/USDT</option>
+              <option value="EURUSD">EUR/USD</option>
+            </select>
+
+            <select id="timeSelect" aria-label="Select timeframe">
+              <option value="15M">15M</option>
+              <option value="1H" selected>1H</option>
+              <option value="4H">4H</option>
+              <option value="1D">1D</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chart-legend">
+          <span><i class="dot up"></i> Up candle</span>
+          <span><i class="dot down"></i> Down candle</span>
+        </div>
+
+        <canvas id="priceChart" height="280">
+          Your browser does not support canvas.
+        </canvas>
+
+        <p class="chart-note">
+          Illustrative candles only. This is not a live trading chart.
+        </p>
+      </section>
+
+      <section class="two-col" id="analysis">
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Technical Indicators</h2>
+              <p class="sub">Educational calculations</p>
+            </div>
+          </div>
+
+          <div class="indicator-grid">
+            <div class="indicator">
+              <span>RSI</span>
+              <b id="rsiValue">--</b>
+            </div>
+
+            <div class="indicator">
+              <span>Average Price</span>
+              <b id="emaValue">--</b>
+            </div>
+
+            <div class="indicator">
+              <span>Market Bias</span>
+              <b id="biasValue">--</b>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Market Analyst</h2>
+              <p class="sub">Educational market observations</p>
+            </div>
+            <span class="tag">DEMO</span>
+          </div>
+
+          <p class="analysis-copy" id="analysisText">
+            Preparing simulated market observations...
+          </p>
+        </article>
+
+      </section>
+
+      <section class="panel" id="portfolio">
+        <div class="panel-heading">
+          <div>
+            <h2>Demo Portfolio</h2>
+            <p class="sub">Virtual account overview</p>
+          </div>
+          <span class="tag">VIRTUAL</span>
+        </div>
+
+        <div class="portfolio-row">
+          <span>Starting virtual balance</span>
+          <b>$10,000.00</b>
+        </div>
+
+        <div class="portfolio-row">
+          <span>Real funds</span>
+          <b>$0.00</b>
+        </div>
+
+        <div class="portfolio-row">
+          <span>Account type</span>
+          <b>Educational Demo</b>
+        </div>
+      </section>
+
+      <section class="notice">
+        <b>Important Notice</b>
+        <p>
+          JJ EXCHANGE is an educational demonstration. Prices, charts and
+          indicators are simulated and may not reflect real markets.
+          Nothing on this website is financial advice or a recommendation
+          to buy or sell any asset. No real-money trading is available.
+        </p>
+      </section>
+
+      <footer>
+        <b>JJ EXCHANGE</b> · JINEX JACKKY
+        <p>Educational Demo Dashboard</p>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
